@@ -23,7 +23,7 @@ public class PatientRepository : IPatient
 
     public async Task<List<Patient>> Index()
     {
-        var patient = await _dataContext.Patients.ToListAsync();
+        var patient = await _dataContext.Patients.Include(e => e.Consultations).ToListAsync();
         return patient;
     }
 

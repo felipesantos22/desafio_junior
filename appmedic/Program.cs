@@ -50,6 +50,9 @@ builder.Services.AddScoped<LoginRepository>();
 builder.Services.AddScoped<ValidateCpf>();
 builder.Services.AddScoped<ValidateCrm>();
 builder.Services.AddScoped<ValidateUserName>();
+builder.Services.AddScoped<ValidateDateConsultation>();
+builder.Services.AddScoped<ValidateDoctorFk>();
+builder.Services.AddScoped<ValidatePatientFk>();
 builder.Services.AddControllers(options =>
     options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 

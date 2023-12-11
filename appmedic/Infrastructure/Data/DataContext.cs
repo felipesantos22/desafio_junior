@@ -43,7 +43,7 @@ public class DataContext : DbContext
 
         modelBuilder.Entity<Patient>()
             .HasMany(e => e.Consultations)
-            .WithOne(e => e.Patiente)
+            .WithOne(e => e.Patient)
             .HasForeignKey(e => e.PatienteId)
             .IsRequired();
         

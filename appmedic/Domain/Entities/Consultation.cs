@@ -7,6 +7,7 @@ public class Consultation
 {
     [Key] public int Id { get; set; }
 
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
     public DateTime DateTime { get; set; }
     public int DoctorId { get; set; }
 
@@ -16,5 +17,5 @@ public class Consultation
     public int PatienteId { get; set; }
 
     [JsonIgnore] 
-    public Patient Patiente { get; set; }
+    public Patient Patient { get; set; }
 }

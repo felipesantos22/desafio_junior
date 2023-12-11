@@ -4,8 +4,6 @@ namespace appmedic.Domain.Entities;
 
 public class Patient
 {
-    public List<Consultation> Consultations = new();
-
     [Key] public int Id { get; set; }
 
     public string Name { get; set; }
@@ -16,4 +14,7 @@ public class Patient
     [StringLength(11, MinimumLength = 11, ErrorMessage = "The CPF must have 11 digits.")]
     [RegularExpression("^[0-9]*$", ErrorMessage = "The CPF must only contain numbers.")]
     public string Cpf { get; set; }
+
+    public List<Consultation> Consultations { get; set; } = new();
+
 }
