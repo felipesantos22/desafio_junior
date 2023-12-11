@@ -1,5 +1,6 @@
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
+using appmedic.Services.Validations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -9,16 +10,23 @@ namespace appmedic.Controllers;
 public class DoctorController : ControllerBase
 {
     private readonly DoctorRepository _doctorRepository;
+    private readonly ValidateCrm _validateCrm;
 
-    public DoctorController(DoctorRepository doctorRepository)
+    public DoctorController(DoctorRepository doctorRepository, ValidateCrm validateCpfCrm)
     {
         _doctorRepository = doctorRepository;
+        _validateCrm = validateCpfCrm;
     }
 
 
     [HttpPost]
     public async Task<ActionResult<Doctor>> Create([FromBody] Doctor doctor)
     {
+        var crm = _validateCrm.CrmExists(doctor.CRM);
+        if (crm)
+        {
+            return BadRequest(new {message = "Crm already registered." });
+        }
         var newDoctor = await _doctorRepository.Create(doctor);
         return Ok(newDoctor);
     }

@@ -1,5 +1,6 @@
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
+using appmedic.Services.Validations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -9,15 +10,22 @@ namespace appmedic.Controllers;
 public class PatientController : ControllerBase
 {
     private readonly PatientRepository _patientRepository;
+    private readonly ValidateCpf _validateCpf;
 
-    public PatientController(PatientRepository patientRepository)
+    public PatientController(PatientRepository patientRepository, ValidateCpf validateCpf)
     {
         _patientRepository = patientRepository;
+        _validateCpf = validateCpf;
     }
 
     [HttpPost]
     public async Task<ActionResult<Patient>> Create([FromBody] Patient patient)
     {
+        var cpf = _validateCpf.CpfExists(patient.Cpf);
+        if (cpf)
+        {
+            return BadRequest(new {message = "CPF already registered." });
+        }
         var newPatient = await _patientRepository.Create(patient);
         return Ok(newPatient);
     }

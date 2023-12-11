@@ -1,6 +1,7 @@
 using System.Text;
 using appmedic.Infrastructure.Data;
 using appmedic.Infrastructure.Repository;
+using appmedic.Services.Validations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -45,6 +46,10 @@ builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<PatientRepository>();
 builder.Services.AddScoped<DoctorRepository>();
 builder.Services.AddScoped<ConsultationRepository>();
+builder.Services.AddScoped<LoginRepository>();
+builder.Services.AddScoped<ValidateCpf>();
+builder.Services.AddScoped<ValidateCrm>();
+builder.Services.AddScoped<ValidateUserName>();
 builder.Services.AddControllers(options =>
     options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 

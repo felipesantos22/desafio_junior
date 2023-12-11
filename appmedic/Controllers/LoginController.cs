@@ -1,5 +1,6 @@
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
+using appmedic.Services.Validations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -9,16 +10,23 @@ namespace appmedic.Controllers;
 public class LoginController : ControllerBase
 {
     private readonly LoginRepository _loginRepository;
+    private readonly ValidateUserName _validateUserName;
 
-    public LoginController(LoginRepository loginRepository)
+    public LoginController(LoginRepository loginRepository, ValidateUserName validateUserName)
     {
         _loginRepository = loginRepository;
+        _validateUserName = validateUserName;
     }
 
 
     [HttpPost]
     public async Task<ActionResult<Login>> Create([FromBody] Login login)
     {
+        var userName = _validateUserName.UserNameExists(login.UserName);
+        if (userName)
+        {
+            return BadRequest(new {message = "UserName already registered." });
+        }
         var newLogin = await _loginRepository.Create(login);
         return Ok(newLogin);
     }
@@ -46,8 +54,8 @@ public class LoginController : ControllerBase
     {
         var updateLogin = await _loginRepository.Show(id);
         if (updateLogin == null) return NotFound(new { message = "Login not found" });
-        var employeeUpdate = await _loginRepository.Update(id, login);
-        return Ok(login);
+        await _loginRepository.Update(id, login);
+        return Ok(new { message = "Login updated" });
     }
 
 
