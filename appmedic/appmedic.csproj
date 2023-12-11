@@ -29,8 +29,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-      <Folder Include="Domain\Entities\" />
       <Folder Include="Domain\Interfaces\" />
       <Folder Include="Infrastructure\" />
       <Folder Include="Services\" />
