@@ -29,9 +29,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Domain\Interfaces\" />
-      <Folder Include="Infrastructure\" />
-      <Folder Include="Services\" />
+      <Folder Include="Infrastructure\DataContext\" />
     </ItemGroup>
 
 </Project>
