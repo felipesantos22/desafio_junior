@@ -8,14 +8,14 @@ namespace appmedic.Services.Token;
 
 public class TokenService
 {
-    public static object GenerateToken(Doctor doctor)
+    public static object GenerateToken(Login login)
     {
         var Key = Encoding.ASCII.GetBytes(Services.Token.Key.Secret);
         var tokenConfig = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new("Id", doctor.Id.ToString())
+                new("Id", login.Id.ToString())
             }),
             Expires = DateTime.UtcNow.AddHours(3),
             SigningCredentials =

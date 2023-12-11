@@ -15,6 +15,8 @@ public class DataContext : DbContext
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Consultation> Consultations { get; set; }
     public DbSet<Patient> Patients { get; set; }
+    
+    public DbSet<Login> Logins { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
