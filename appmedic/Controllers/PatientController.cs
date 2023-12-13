@@ -1,6 +1,7 @@
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -18,6 +19,7 @@ public class PatientController : ControllerBase
         _validateCpf = validateCpf;
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Patient>> Create([FromBody] Patient patient)
     {

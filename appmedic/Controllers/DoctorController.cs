@@ -1,6 +1,7 @@
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -19,6 +20,7 @@ public class DoctorController : ControllerBase
     }
 
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Doctor>> Create([FromBody] Doctor doctor)
     {
