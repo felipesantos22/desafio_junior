@@ -15,5 +15,16 @@ public class Doctor
     public string CRM { get; set; }
 
     public List<Consultation> Consultations { get; set; } = new();
+    
+    public Doctor()
+    {
+    }
+
+    public Doctor(int id, string name, string crm)
+    {
+        Id = id;
+        Name = name;
+        CRM = crm;
+    }
    
 }

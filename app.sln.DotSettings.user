@@ -4,5 +4,6 @@
     &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.DoctorTests.CRM_Validation_Success&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.PatientTests.Cpf_Validation_Success&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.LoginTests.UserName_Validation_Success&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.CreateDoctorTests.Create_Doctor&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
