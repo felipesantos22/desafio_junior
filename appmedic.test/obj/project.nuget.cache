@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UZ9sYg4xuJXdMkk0EulzYn3G/R6zARhdu1PIwyUoM9cLdJwlds2inmjvxziE1pQkBmt2ZOU0J/3Od2dpgv5vRQ==",
+  "dgSpecHash": "mHymfHdLkkEhKnq8x3Vox0Kz+Ppd+kwPQJ9TGMRVLJvi5acqJVZxe9qM7nR1mI/hQAHfUcXOQlRocwumES9rBg==",
   "success": true,
   "projectFilePath": "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj",
   "expectedPackageFiles": [
     "/home/felipe/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/home/felipe/.nuget/packages/dapper/2.1.24/dapper.2.1.24.nupkg.sha512",
+    "/home/felipe/.nuget/packages/expectedobjects/3.5.4/expectedobjects.3.5.4.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.13/microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.aspnetcore.openapi/7.0.14/microsoft.aspnetcore.openapi.7.0.14.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.codecoverage/17.3.2/microsoft.codecoverage.17.3.2.nupkg.sha512",

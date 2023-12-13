@@ -18,4 +18,16 @@ public class Consultation
 
     [JsonIgnore] 
     public Patient Patient { get; set; }
+
+    public Consultation()
+    {
+    }
+
+    public Consultation(int id, DateTime dateTime, int doctorId, int patienteId)
+    {
+        Id = id;
+        DateTime = dateTime;
+        DoctorId = doctorId;
+        PatienteId = patienteId;
+    }
 }

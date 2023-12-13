@@ -17,4 +17,15 @@ public class Patient
 
     public List<Consultation> Consultations { get; set; } = new();
 
+    public Patient()
+    {
+    }
+
+    public Patient(int id, string name, string age, string cpf)
+    {
+        Id = id;
+        Name = name;
+        Age = age;
+        Cpf = cpf;
+    }
 }

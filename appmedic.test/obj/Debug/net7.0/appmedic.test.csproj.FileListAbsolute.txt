@@ -122,3 +122,4 @@
 /home/felipe/RiderProjects/app/appmedic.test/obj/Debug/net7.0/appmedic.test.pdb
 /home/felipe/RiderProjects/app/appmedic.test/obj/Debug/net7.0/appmedic.test.genruntimeconfig.cache
 /home/felipe/RiderProjects/app/appmedic.test/obj/Debug/net7.0/ref/appmedic.test.dll
+/home/felipe/RiderProjects/app/appmedic.test/bin/Debug/net7.0/ExpectedObjects.dll

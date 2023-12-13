@@ -15,4 +15,15 @@ public class Login
     [Required(ErrorMessage = "Password is required.")]
     [StringLength(10, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 10 characters.")]
     public string Password { get; set; }
+
+    public Login()
+    {
+    }
+
+    public Login(int id, string userName, string password)
+    {
+        Id = id;
+        UserName = userName;
+        Password = password;
+    }
 }

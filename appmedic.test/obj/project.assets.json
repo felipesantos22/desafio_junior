@@ -21,6 +21,19 @@
           }
         }
       },
+      "ExpectedObjects/3.5.4": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/ExpectedObjects.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/ExpectedObjects.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.13": {
         "type": "package",
         "dependencies": {
@@ -1677,7 +1690,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
+          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {
             "related": ".xml"
           }
         },
@@ -2367,6 +2380,19 @@
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml",
         "readme.md"
+      ]
+    },
+    "ExpectedObjects/3.5.4": {
+      "sha512": "7urJ3ZpCWIegl2JfDbmyIR+E1Wu/4sG9oJPYVBxByBnbVavFcOHbWTlDeWMJQAYu8ZgrO0OG8UeiCnsWbxzYlA==",
+      "type": "package",
+      "path": "expectedobjects/3.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "expectedobjects.3.5.4.nupkg.sha512",
+        "expectedobjects.nuspec",
+        "lib/net40/ExpectedObjects.dll",
+        "lib/netstandard1.3/ExpectedObjects.dll"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.13": {
@@ -7536,6 +7562,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "ExpectedObjects >= 3.5.4",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "appmedic >= 1.0.0",
       "coverlet.collector >= 3.1.2",
@@ -7584,6 +7611,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "ExpectedObjects": {
+            "target": "Package",
+            "version": "[3.5.4, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.3.2, )"

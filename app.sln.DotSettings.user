@@ -1,9 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/felipe/.cache/JetBrains/Rider2023.3/resharper-host/temp/Rider/vAny/CoverageData/_app.1610293365/Snapshot/snapshot.utdcvr</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=016b4a27_002D9179_002D4781_002D9faf_002Dc6402021248f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CRM_Validation_Success" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.DoctorTests.CRM_Validation_Success&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.PatientTests.Cpf_Validation_Success&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.LoginTests.UserName_Validation_Success&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::F6736856-C2BA-4C98-8017-C8D4BDF351F7::net7.0::appmedic.test.CreateDoctorTests.Create_Doctor&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;Solution /&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
