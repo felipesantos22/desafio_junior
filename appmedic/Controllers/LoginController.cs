@@ -1,6 +1,8 @@
+using appmedic.Domain.Dtos;
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -11,11 +13,13 @@ public class LoginController : ControllerBase
 {
     private readonly LoginRepository _loginRepository;
     private readonly ValidateUserName _validateUserName;
+    private readonly IMapper _mapper;
 
-    public LoginController(LoginRepository loginRepository, ValidateUserName validateUserName)
+    public LoginController(LoginRepository loginRepository, ValidateUserName validateUserName, IMapper mapper)
     {
         _loginRepository = loginRepository;
         _validateUserName = validateUserName;
+        _mapper = mapper;
     }
 
 
@@ -44,8 +48,9 @@ public class LoginController : ControllerBase
     public async Task<ActionResult<Login>> Show(int id)
     {
         var login = await _loginRepository.Show(id);
+        var loginDto = _mapper.Map<LoginDto>(login);
         if (login == null) return NotFound(new { message = "Login not found" });
-        return Ok(login);
+        return Ok(loginDto);
     }
 
 

@@ -25,6 +25,7 @@ public class LoginRepository:ILogin
     {
         var logins = await _dataContext.Logins.Select(l => new LoginDto()
         {
+            Id = l.Id,
             UserName = l.UserName,
         }).ToListAsync();
         return logins;

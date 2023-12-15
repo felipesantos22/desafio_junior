@@ -1,4 +1,5 @@
 using System.Text;
+using appmedic.Domain.Mapper;
 using appmedic.Infrastructure.Data;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
@@ -13,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(typeof(EntityToDto));
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()

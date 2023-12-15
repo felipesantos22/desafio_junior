@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jhjGfXwCEGioDhNqMtHzGAP6iPPpGAYrbP0j2L3r4XKWN6xs4NAjJw3F8tS0smgO0/9YUlkUeo+vJuzpiVabDw==",
+  "dgSpecHash": "RGtEMm0u6w+0YgVBxJ5QqunIx/F6vcEtoGnqeTpqaxcKlH3IG7UW57q5WG3A9UD5Wu9CQ1ao0d83MmffBQ6WoA==",
   "success": true,
   "projectFilePath": "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj",
   "expectedPackageFiles": [
+    "/home/felipe/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/felipe/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/felipe/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/felipe/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/home/felipe/.nuget/packages/dapper/2.1.24/dapper.2.1.24.nupkg.sha512",
@@ -11,7 +13,7 @@
     "/home/felipe/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.13/microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.aspnetcore.openapi/7.0.14/microsoft.aspnetcore.openapi.7.0.14.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.codecoverage/17.3.2/microsoft.codecoverage.17.3.2.nupkg.sha512",
-    "/home/felipe/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/felipe/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.entityframeworkcore/7.0.13/microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.13/microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.13/microsoft.entityframeworkcore.analyzers.7.0.13.nupkg.sha512",

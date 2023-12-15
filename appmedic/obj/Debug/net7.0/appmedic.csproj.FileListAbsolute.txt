@@ -49,3 +49,5 @@
 /home/felipe/RiderProjects/app/appmedic/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
 /home/felipe/RiderProjects/app/appmedic/bin/Debug/net7.0/System.CodeDom.dll
 /home/felipe/RiderProjects/app/appmedic/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/home/felipe/RiderProjects/app/appmedic/bin/Debug/net7.0/AutoMapper.dll
+/home/felipe/RiderProjects/app/appmedic/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
