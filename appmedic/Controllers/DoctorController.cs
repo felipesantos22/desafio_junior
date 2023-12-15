@@ -1,4 +1,5 @@
 using appmedic.Domain.Entities;
+using appmedic.Domain.Interfaces;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +11,7 @@ namespace appmedic.Controllers;
 [Route("api/doctor")]
 public class DoctorController : ControllerBase
 {
+    private readonly IDoctor _doctor;
     private readonly DoctorRepository _doctorRepository;
     private readonly ValidateCrm _validateCrm;
 
@@ -19,8 +21,7 @@ public class DoctorController : ControllerBase
         _validateCrm = validateCpfCrm;
     }
 
-
-    [Authorize]
+    
     [HttpPost]
     public async Task<ActionResult<Doctor>> Create([FromBody] Doctor doctor)
     {

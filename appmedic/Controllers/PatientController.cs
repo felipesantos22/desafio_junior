@@ -19,7 +19,7 @@ public class PatientController : ControllerBase
         _validateCpf = validateCpf;
     }
 
-    [Authorize]
+    
     [HttpPost]
     public async Task<ActionResult<Patient>> Create([FromBody] Patient patient)
     {

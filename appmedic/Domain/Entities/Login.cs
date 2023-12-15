@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace appmedic.Domain.Entities;
 
@@ -15,7 +16,7 @@ public class Login
     [Required(ErrorMessage = "Password is required.")]
     [StringLength(10, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 10 characters.")]
     public string Password { get; set; }
-
+    
     public Login()
     {
     }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mHymfHdLkkEhKnq8x3Vox0Kz+Ppd+kwPQJ9TGMRVLJvi5acqJVZxe9qM7nR1mI/hQAHfUcXOQlRocwumES9rBg==",
+  "dgSpecHash": "jhjGfXwCEGioDhNqMtHzGAP6iPPpGAYrbP0j2L3r4XKWN6xs4NAjJw3F8tS0smgO0/9YUlkUeo+vJuzpiVabDw==",
   "success": true,
   "projectFilePath": "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj",
   "expectedPackageFiles": [
+    "/home/felipe/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/felipe/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/home/felipe/.nuget/packages/dapper/2.1.24/dapper.2.1.24.nupkg.sha512",
     "/home/felipe/.nuget/packages/expectedobjects/3.5.4/expectedobjects.3.5.4.nupkg.sha512",
@@ -37,6 +38,7 @@
     "/home/felipe/.nuget/packages/microsoft.testplatform.objectmodel/17.3.2/microsoft.testplatform.objectmodel.17.3.2.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.testplatform.testhost/17.3.2/microsoft.testplatform.testhost.17.3.2.nupkg.sha512",
     "/home/felipe/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "/home/felipe/.nuget/packages/moq/4.20.70/moq.4.20.70.nupkg.sha512",
     "/home/felipe/.nuget/packages/mysqlconnector/2.2.5/mysqlconnector.2.2.5.nupkg.sha512",
     "/home/felipe/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/home/felipe/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
@@ -69,6 +71,7 @@
     "/home/felipe/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
     "/home/felipe/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/home/felipe/.nuget/packages/system.diagnostics.diagnosticsource/4.3.0/system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
+    "/home/felipe/.nuget/packages/system.diagnostics.eventlog/6.0.0/system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "/home/felipe/.nuget/packages/system.diagnostics.tools/4.3.0/system.diagnostics.tools.4.3.0.nupkg.sha512",
     "/home/felipe/.nuget/packages/system.diagnostics.tracing/4.3.0/system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "/home/felipe/.nuget/packages/system.dynamic.runtime/4.0.11/system.dynamic.runtime.4.0.11.nupkg.sha512",

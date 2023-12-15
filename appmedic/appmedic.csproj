@@ -26,6 +26,9 @@
     <ItemGroup>
       <Compile Remove="WeatherForecast.cs" />
       <Compile Remove="Controllers\WeatherForecastController.cs" />
+      <Compile Remove="Domain\Dtos\ConsultationDto.cs" />
+      <Compile Remove="Domain\Dtos\DoctorDto.cs" />
+      <Compile Remove="Domain\Dtos\PatientDto.cs" />
     </ItemGroup>
 
 </Project>

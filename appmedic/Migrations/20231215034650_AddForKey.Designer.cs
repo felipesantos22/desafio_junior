@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using appmedic.Infrastructure.Data;
 
@@ -10,9 +11,11 @@ using appmedic.Infrastructure.Data;
 namespace appmedic.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231215034650_AddForKey")]
+    partial class AddForKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,6 +57,9 @@ namespace appmedic.Migrations
                         .HasMaxLength(6)
                         .HasColumnType("varchar(6)");
 
+                    b.Property<int>("LoginId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -62,6 +68,9 @@ namespace appmedic.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CRM")
+                        .IsUnique();
+
+                    b.HasIndex("LoginId")
                         .IsUnique();
 
                     b.ToTable("Doctors");
@@ -102,6 +111,9 @@ namespace appmedic.Migrations
                         .HasMaxLength(11)
                         .HasColumnType("varchar(11)");
 
+                    b.Property<int>("LoginId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -109,6 +121,9 @@ namespace appmedic.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Cpf")
+                        .IsUnique();
+
+                    b.HasIndex("LoginId")
                         .IsUnique();
 
                     b.ToTable("Patients");
@@ -135,7 +150,38 @@ namespace appmedic.Migrations
 
             modelBuilder.Entity("appmedic.Domain.Entities.Doctor", b =>
                 {
+                    b.HasOne("appmedic.Domain.Entities.Login", "Login")
+                        .WithOne("Doctor")
+                        .HasForeignKey("appmedic.Domain.Entities.Doctor", "LoginId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Login");
+                });
+
+            modelBuilder.Entity("appmedic.Domain.Entities.Patient", b =>
+                {
+                    b.HasOne("appmedic.Domain.Entities.Login", "Login")
+                        .WithOne("Patient")
+                        .HasForeignKey("appmedic.Domain.Entities.Patient", "LoginId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Login");
+                });
+
+            modelBuilder.Entity("appmedic.Domain.Entities.Doctor", b =>
+                {
                     b.Navigation("Consultations");
+                });
+
+            modelBuilder.Entity("appmedic.Domain.Entities.Login", b =>
+                {
+                    b.Navigation("Doctor")
+                        .IsRequired();
+
+                    b.Navigation("Patient")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("appmedic.Domain.Entities.Patient", b =>

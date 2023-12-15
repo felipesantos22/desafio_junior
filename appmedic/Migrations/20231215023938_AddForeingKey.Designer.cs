@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using appmedic.Infrastructure.Data;
 
@@ -10,9 +11,11 @@ using appmedic.Infrastructure.Data;
 namespace appmedic.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231215023938_AddForeingKey")]
+    partial class AddForeingKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,7 +73,6 @@ namespace appmedic.Migrations
             modelBuilder.Entity("appmedic.Domain.Entities.Login", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("Password")
@@ -78,11 +80,17 @@ namespace appmedic.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("varchar(10)");
 
+                    b.Property<int?>("PatientId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PatientId")
+                        .IsUnique();
 
                     b.ToTable("Logins");
                 });
@@ -133,14 +141,37 @@ namespace appmedic.Migrations
                     b.Navigation("Patient");
                 });
 
+            modelBuilder.Entity("appmedic.Domain.Entities.Login", b =>
+                {
+                    b.HasOne("appmedic.Domain.Entities.Doctor", "Doctor")
+                        .WithOne("Login")
+                        .HasForeignKey("appmedic.Domain.Entities.Login", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("appmedic.Domain.Entities.Patient", "Patient")
+                        .WithOne("Login")
+                        .HasForeignKey("appmedic.Domain.Entities.Login", "PatientId");
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+                });
+
             modelBuilder.Entity("appmedic.Domain.Entities.Doctor", b =>
                 {
                     b.Navigation("Consultations");
+
+                    b.Navigation("Login")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("appmedic.Domain.Entities.Patient", b =>
                 {
                     b.Navigation("Consultations");
+
+                    b.Navigation("Login")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -1,3 +1,4 @@
+using appmedic.Domain.Dtos;
 using appmedic.Domain.Entities;
 using appmedic.Domain.Interfaces;
 using appmedic.Infrastructure.Data;
@@ -20,9 +21,12 @@ public class LoginRepository:ILogin
         return login;
     }
 
-    public async Task<List<Login>> Index()
+    public async Task<List<LoginDto>> Index()
     {
-        var logins = await _dataContext.Logins.ToListAsync();
+        var logins = await _dataContext.Logins.Select(l => new LoginDto()
+        {
+            UserName = l.UserName,
+        }).ToListAsync();
         return logins;
     }
 

@@ -15,7 +15,7 @@ public class DataContext : DbContext
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Consultation> Consultations { get; set; }
     public DbSet<Patient> Patients { get; set; }
-    
+
     public DbSet<Login> Logins { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -27,14 +27,16 @@ public class DataContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new DoctorMap());
+
         modelBuilder.Entity<Doctor>()
             .HasIndex(d => d.CRM)
             .IsUnique();
-        
+
         modelBuilder.Entity<Patient>()
             .HasIndex(d => d.Cpf)
             .IsUnique();
-        
+
         modelBuilder.Entity<Doctor>()
             .HasMany(e => e.Consultations)
             .WithOne(e => e.Doctor)
@@ -46,6 +48,5 @@ public class DataContext : DbContext
             .WithOne(e => e.Patient)
             .HasForeignKey(e => e.PatienteId)
             .IsRequired();
-        
     }
 }
