@@ -17,8 +17,6 @@ Neste projeto irei:
 
 -  Entender o conceito de Migrations
 -  Entender o conceito de Camadas
--  Entender relacionamentos 1:1 entre login e pacientes
--  Entender relacionamentos 1:1 entre login e médicos
 -  Entender relacionamentos 1:N entre pacientes e consultas
 -  Entender relacionamentos 1:N entre médicos e consultas
 -  Autenticação JWT
