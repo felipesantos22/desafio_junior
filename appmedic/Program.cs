@@ -44,6 +44,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddHttpClient<ViaCepRepository>();
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<PatientRepository>();
 builder.Services.AddScoped<DoctorRepository>();

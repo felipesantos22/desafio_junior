@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace appmedic.Domain.Entities;
 
@@ -14,6 +15,7 @@ public class Doctor
     [RegularExpression("^[0-9]*$", ErrorMessage = "The CRM must contain only numbers.")]
     public string CRM { get; set; }
 
+    [JsonIgnore]
     public List<Consultation> Consultations { get; set; } = new();
     
     public Doctor()

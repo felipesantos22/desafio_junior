@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj": {}
+    "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic.test\\appmedic.test.csproj": {}
   },
   "projects": {
-    "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj": {
+    "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic.test\\appmedic.test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj",
+        "projectUniqueName": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic.test\\appmedic.test.csproj",
         "projectName": "appmedic.test",
-        "projectPath": "/home/felipe/RiderProjects/app/appmedic.test/appmedic.test.csproj",
-        "packagesPath": "/home/felipe/.nuget/packages/",
-        "outputPath": "/home/felipe/RiderProjects/app/appmedic.test/obj/",
+        "projectPath": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic.test\\appmedic.test.csproj",
+        "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic.test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/felipe/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/felipe/RiderProjects/app/appmedic/appmedic.csproj": {
-                "projectPath": "/home/felipe/RiderProjects/app/appmedic/appmedic.csproj"
+              "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\appmedic.csproj": {
+                "projectPath": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\appmedic.csproj"
               }
             }
           }
@@ -82,31 +84,47 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/felipe/RiderProjects/app/appmedic/appmedic.csproj": {
+    "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\appmedic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/felipe/RiderProjects/app/appmedic/appmedic.csproj",
+        "projectUniqueName": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\appmedic.csproj",
         "projectName": "appmedic",
-        "projectPath": "/home/felipe/RiderProjects/app/appmedic/appmedic.csproj",
-        "packagesPath": "/home/felipe/.nuget/packages/",
-        "outputPath": "/home/felipe/RiderProjects/app/appmedic/obj/",
+        "projectPath": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\appmedic.csproj",
+        "packagesPath": "C:\\Users\\Felipe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/felipe/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -161,6 +179,10 @@
               "target": "Package",
               "version": "[7.0.13, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -181,6 +203,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -189,7 +229,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
