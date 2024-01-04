@@ -26,14 +26,14 @@ public class AddressRepository
     public async Task<Address?> CreateCep(string cep)
     {
         var addressViaCep = await ShowAddress(cep);
-        await _dataContext.ViaCep.AddAsync(addressViaCep!);
+        await _dataContext.Address.AddAsync(addressViaCep!);
         await _dataContext.SaveChangesAsync();
         return addressViaCep;
     }
     
     public async Task<List<Address>> Index()
     {
-        var address = await _dataContext.ViaCep.ToListAsync();
+        var address = await _dataContext.Address.ToListAsync();
         return address;
     }
 }

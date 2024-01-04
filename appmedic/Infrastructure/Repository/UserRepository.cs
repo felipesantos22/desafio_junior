@@ -16,14 +16,14 @@ public class UserRepository:IUser
     }
     public async Task<User> Create(User user)
     {
-        await _dataContext.Logins.AddAsync(user);
+        await _dataContext.Users.AddAsync(user);
         await _dataContext.SaveChangesAsync();
         return user;
     }
 
     public async Task<List<LoginDto>> Index()
     {
-        var logins = await _dataContext.Logins.Select(l => new LoginDto()
+        var logins = await _dataContext.Users.Select(l => new LoginDto()
         {
             Id = l.Id,
             UserName = l.UserName,
@@ -33,13 +33,13 @@ public class UserRepository:IUser
 
     public async Task<User?> Show(int id)
     {
-        var login = await _dataContext.Logins.FirstOrDefaultAsync(c => c.Id == id);
+        var login = await _dataContext.Users.FirstOrDefaultAsync(c => c.Id == id);
         return login;
     }
 
     public async Task<User> Update(int id, User user)
     {
-        var loginUpdate = await _dataContext.Logins.FirstOrDefaultAsync(c => c.Id == id);
+        var loginUpdate = await _dataContext.Users.FirstOrDefaultAsync(c => c.Id == id);
         loginUpdate!.UserName = user.UserName;
         loginUpdate!.Password = user.Password;
         await _dataContext.SaveChangesAsync();
@@ -48,8 +48,8 @@ public class UserRepository:IUser
 
     public async Task<User?> Destroy(int id)
     {
-        var deleteLogin = await _dataContext.Logins.FirstOrDefaultAsync(c => c.Id == id);
-        _dataContext.Logins.Remove(deleteLogin!);
+        var deleteLogin = await _dataContext.Users.FirstOrDefaultAsync(c => c.Id == id);
+        _dataContext.Users.Remove(deleteLogin!);
         await _dataContext.SaveChangesAsync();
         return deleteLogin;
     }
@@ -57,7 +57,7 @@ public class UserRepository:IUser
     // Function verify user in database
     public async Task<User?> ShowLogin(string name, string password)
     {
-        var existingLogin = await _dataContext.Logins
+        var existingLogin = await _dataContext.Users
             .FirstOrDefaultAsync(e => e.UserName == name && e.Password == password);
         return existingLogin;
     }

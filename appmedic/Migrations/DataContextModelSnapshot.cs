@@ -73,7 +73,7 @@ namespace appmedic.Migrations
                     b.HasIndex("PatientId")
                         .IsUnique();
 
-                    b.ToTable("ViaCep");
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("appmedic.Domain.Entities.Consultation", b =>
@@ -172,7 +172,7 @@ namespace appmedic.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logins");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("appmedic.Domain.Entities.Address", b =>

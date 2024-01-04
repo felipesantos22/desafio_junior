@@ -15,9 +15,8 @@ public class DataContext : DbContext
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Consultation> Consultations { get; set; }
     public DbSet<Patient> Patients { get; set; }
-    public DbSet<User> Logins { get; set; }
-    public DbSet<Address> ViaCep { get; set; }
-
+    public DbSet<User> Users { get; set; }
+    public DbSet<Address> Address { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         var connectionString = Configuration.GetConnectionString("WebApiDatabase");
@@ -50,7 +49,7 @@ public class DataContext : DbContext
 
         modelBuilder.Entity<Address>()
             .HasOne(a => a.Patient)
-            .WithOne(a => a.Address)
+            .WithOne(p => p.Address) 
             .HasForeignKey<Address>(a => a.PatientId)
             .IsRequired();
     }

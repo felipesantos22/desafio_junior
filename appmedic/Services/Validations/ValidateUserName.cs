@@ -13,6 +13,6 @@ public class ValidateUserName
     
     public bool UserNameExists(string userName)
     {
-        return _dataContext.Logins.Any(p => p.UserName == userName);
+        return _dataContext.Users.Any(p => p.UserName == userName);
     } 
 }
