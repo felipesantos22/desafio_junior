@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using appmedic.Infrastructure.Data;
 
@@ -10,71 +11,16 @@ using appmedic.Infrastructure.Data;
 namespace appmedic.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240104041330_create_role_login")]
+    partial class create_role_login
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("appmedic.Domain.Entities.Address", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Bairro")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Complemento")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Ddd")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Gia")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Ibge")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Localidade")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Logradouro")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Siafi")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Uf")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId")
-                        .IsUnique();
-
-                    b.ToTable("ViaCep");
-                });
 
             modelBuilder.Entity("appmedic.Domain.Entities.Consultation", b =>
                 {
@@ -124,6 +70,30 @@ namespace appmedic.Migrations
                     b.ToTable("Doctors");
                 });
 
+            modelBuilder.Entity("appmedic.Domain.Entities.Login", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logins");
+                });
+
             modelBuilder.Entity("appmedic.Domain.Entities.Patient", b =>
                 {
                     b.Property<int>("Id")
@@ -151,39 +121,55 @@ namespace appmedic.Migrations
                     b.ToTable("Patients");
                 });
 
-            modelBuilder.Entity("appmedic.Domain.Entities.User", b =>
+            modelBuilder.Entity("appmedic.Domain.Entities.ViaCep", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
-
-                    b.Property<string>("Role")
+                    b.Property<string>("Bairro")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("Cep")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Complemento")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Ddd")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Gia")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Ibge")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Localidade")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Logradouro")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Siafi")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Uf")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logins");
-                });
-
-            modelBuilder.Entity("appmedic.Domain.Entities.Address", b =>
-                {
-                    b.HasOne("appmedic.Domain.Entities.Patient", "Patient")
-                        .WithOne("Address")
-                        .HasForeignKey("appmedic.Domain.Entities.Address", "PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
+                    b.ToTable("ViaCep");
                 });
 
             modelBuilder.Entity("appmedic.Domain.Entities.Consultation", b =>
@@ -212,9 +198,6 @@ namespace appmedic.Migrations
 
             modelBuilder.Entity("appmedic.Domain.Entities.Patient", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
-
                     b.Navigation("Consultations");
                 });
 #pragma warning restore 612, 618

@@ -15,12 +15,11 @@ public class DataContext : DbContext
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Consultation> Consultations { get; set; }
     public DbSet<Patient> Patients { get; set; }
-
-    public DbSet<Login> Logins { get; set; }
+    public DbSet<User> Logins { get; set; }
+    public DbSet<Address> ViaCep { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        // connect to mysql with connection string from app settings
         var connectionString = Configuration.GetConnectionString("WebApiDatabase");
         options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
     }
@@ -47,6 +46,12 @@ public class DataContext : DbContext
             .HasMany(e => e.Consultations)
             .WithOne(e => e.Patient)
             .HasForeignKey(e => e.PatienteId)
+            .IsRequired();
+
+        modelBuilder.Entity<Address>()
+            .HasOne(a => a.Patient)
+            .WithOne(a => a.Address)
+            .HasForeignKey<Address>(a => a.PatientId)
             .IsRequired();
     }
 }

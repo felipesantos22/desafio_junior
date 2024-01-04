@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace appmedic.Domain.Entities;
 
-public class Login
+public class User
 {
     [Key]
     public int Id { get; set; }
@@ -17,11 +17,13 @@ public class Login
     [StringLength(10, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 10 characters.")]
     public string Password { get; set; }
     
-    public Login()
+    public string Role { get; set; }
+    
+    public User()
     {
     }
 
-    public Login(int id, string userName, string password)
+    public User(int id, string userName, string password)
     {
         Id = id;
         UserName = userName;

@@ -6,19 +6,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace appmedic.Infrastructure.Repository;
 
-public class LoginRepository:ILogin
+public class UserRepository:IUser
 {
     private readonly DataContext _dataContext;
 
-    public LoginRepository(DataContext dataContext)
+    public UserRepository(DataContext dataContext)
     {
         _dataContext = dataContext;
     }
-    public async Task<Login> Create(Login login)
+    public async Task<User> Create(User user)
     {
-        await _dataContext.Logins.AddAsync(login);
+        await _dataContext.Logins.AddAsync(user);
         await _dataContext.SaveChangesAsync();
-        return login;
+        return user;
     }
 
     public async Task<List<LoginDto>> Index()
@@ -31,22 +31,22 @@ public class LoginRepository:ILogin
         return logins;
     }
 
-    public async Task<Login?> Show(int id)
+    public async Task<User?> Show(int id)
     {
         var login = await _dataContext.Logins.FirstOrDefaultAsync(c => c.Id == id);
         return login;
     }
 
-    public async Task<Login> Update(int id, Login login)
+    public async Task<User> Update(int id, User user)
     {
         var loginUpdate = await _dataContext.Logins.FirstOrDefaultAsync(c => c.Id == id);
-        loginUpdate!.UserName = login.UserName;
-        loginUpdate!.Password = login.Password;
+        loginUpdate!.UserName = user.UserName;
+        loginUpdate!.Password = user.Password;
         await _dataContext.SaveChangesAsync();
         return loginUpdate;
     }
 
-    public async Task<Login?> Destroy(int id)
+    public async Task<User?> Destroy(int id)
     {
         var deleteLogin = await _dataContext.Logins.FirstOrDefaultAsync(c => c.Id == id);
         _dataContext.Logins.Remove(deleteLogin!);
@@ -55,7 +55,7 @@ public class LoginRepository:ILogin
     }
 
     // Function verify user in database
-    public async Task<Login?> ShowLogin(string name, string password)
+    public async Task<User?> ShowLogin(string name, string password)
     {
         var existingLogin = await _dataContext.Logins
             .FirstOrDefaultAsync(e => e.UserName == name && e.Password == password);

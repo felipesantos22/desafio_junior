@@ -10,17 +10,17 @@ namespace appmedic.Controllers;
 [Route("api/v1/auth")]
 public class AuthController : ControllerBase
 {
-    private readonly LoginRepository _loginRepository;
+    private readonly UserRepository _userRepository;
 
-    public AuthController(LoginRepository loginRepository)
+    public AuthController(UserRepository userRepository)
     {
-        _loginRepository = loginRepository;
+        _userRepository = userRepository;
     }
 
     [HttpPost]
-    public async Task<ActionResult<object>> CreateToken([FromBody] Login login)
+    public async Task<ActionResult<object>> CreateToken([FromBody] User user)
     {
-        var authEmployee = await _loginRepository.ShowLogin(login.UserName, login.Password);
+        var authEmployee = await _userRepository.ShowLogin(user.UserName, user.Password);
         if (authEmployee != null)
         {
             var tokenResult = TokenService.GenerateToken(authEmployee);

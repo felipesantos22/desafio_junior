@@ -3,13 +3,13 @@ using appmedic.Domain.Entities;
 
 namespace appmedic.test;
 
-public class LoginTests
+public class UserTests
 {
     [Fact]
     public void UserName_Validation_Success()
     {
         // Arrange
-        var login = new Login()
+        var login = new User()
         {
             Id = 1,
             UserName = "felipevs",

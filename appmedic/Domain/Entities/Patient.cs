@@ -15,8 +15,15 @@ public class Patient
     [RegularExpression("^[0-9]*$", ErrorMessage = "The CPF must only contain numbers.")]
     public string Cpf { get; set; }
 
+    public Address Address { get; set; }
     public List<Consultation> Consultations { get; set; } = new();
 
+    
+    
+    
+    
+    
+    // Using tests
     public Patient()
     {
     }

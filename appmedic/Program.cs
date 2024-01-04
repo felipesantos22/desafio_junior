@@ -44,12 +44,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddHttpClient<ViaCepRepository>();
+builder.Services.AddHttpClient<AddressRepository>();
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<PatientRepository>();
 builder.Services.AddScoped<DoctorRepository>();
 builder.Services.AddScoped<ConsultationRepository>();
-builder.Services.AddScoped<LoginRepository>();
+builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<ValidateCpf>();
 builder.Services.AddScoped<ValidateCrm>();
 builder.Services.AddScoped<ValidateUserName>();
