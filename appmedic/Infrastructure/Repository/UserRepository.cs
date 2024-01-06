@@ -21,12 +21,13 @@ public class UserRepository:IUser
         return user;
     }
 
-    public async Task<List<LoginDto>> Index()
+    public async Task<List<UserDto>> Index()
     {
-        var logins = await _dataContext.Users.Select(l => new LoginDto()
+        var logins = await _dataContext.Users.Select(l => new UserDto()
         {
             Id = l.Id,
             UserName = l.UserName,
+            Role = l.Role
         }).ToListAsync();
         return logins;
     }

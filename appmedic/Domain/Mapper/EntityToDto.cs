@@ -8,6 +8,6 @@ public class EntityToDto:Profile
 {
     public EntityToDto()
     {
-        CreateMap<User, LoginDto>();
+        CreateMap<User, UserDto>();
     }
 }

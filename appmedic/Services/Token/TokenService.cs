@@ -15,8 +15,9 @@ public class TokenService
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new("Id", user.Id.ToString()),
-                new Claim("Role", user.Role)
+                //new("Id", user.Id.ToString()),
+                new Claim(type:ClaimTypes.Name , user.UserName),
+                new Claim(type:ClaimTypes.Role, user.Role)
             }),
             Expires = DateTime.UtcNow.AddHours(3),
             SigningCredentials =

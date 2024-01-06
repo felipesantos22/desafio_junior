@@ -1,6 +1,7 @@
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace appmedic.Controllers;
@@ -24,6 +25,7 @@ public class ConsultationController : ControllerBase
     }
     
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Consultation>> Create([FromBody] Consultation consultation)
     {
@@ -79,11 +81,23 @@ public class ConsultationController : ControllerBase
     }
 
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult<Consultation>> Destroy(int id)
     {
-        var consultationId = await _consultationRepository.Show(id);
-        if (consultationId == null) return NotFound(new { message = "Consultation not found" });
+        var consultation = await _consultationRepository.Show(id);
+
+        if (consultation == null)
+        {
+            return NotFound(new { message = "Consultation not found" });
+        }
+        
+        var userRole = User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
+        if (userRole != "Admin")
+        {
+            return NotFound(new { message = "You do not have permission to delete this consultation" });
+        }
+
         var deleteConsultation = await _consultationRepository.Destroy(id);
         return Ok(new { message = "Consultation deleted" });
     }

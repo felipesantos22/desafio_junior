@@ -16,6 +16,5 @@ public class Address
     public string Gia { get; set; }
     public string Ddd { get; set; }
     public string Siafi { get; set; }
-    public int PatientId { get; set; }
-    public Patient Patient { get; set; }
+   
 }

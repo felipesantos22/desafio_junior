@@ -47,10 +47,6 @@ public class DataContext : DbContext
             .HasForeignKey(e => e.PatienteId)
             .IsRequired();
 
-        modelBuilder.Entity<Address>()
-            .HasOne(a => a.Patient)
-            .WithOne(p => p.Address) 
-            .HasForeignKey<Address>(a => a.PatientId)
-            .IsRequired();
+      
     }
 }

@@ -38,7 +38,7 @@ public class AddressController : ControllerBase
     
     
     [HttpPost]
-    [Authorize(Roles = "manager")]
+    //[Authorize(Roles = "manager")]
     public async Task<IActionResult> CreateCep([FromBody] string cep)
     {
         var address = await _addressRepository.ShowAddress(cep);

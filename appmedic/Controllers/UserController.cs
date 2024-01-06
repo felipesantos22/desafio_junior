@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace appmedic.Controllers;
 
 [ApiController]
-[Route("api/login")]
+[Route("api/user")]
 public class UserController : ControllerBase
 {
     private readonly UserRepository _userRepository;
@@ -37,18 +37,18 @@ public class UserController : ControllerBase
 
 
     [HttpGet]
-    public async Task<ActionResult<List<User>>> Index()
+    public async Task<ActionResult<List<UserDto>>> Index()
     {
-        var logins = await _userRepository.Index();
-        return Ok(logins);
+        var users = await _userRepository.Index();
+        return Ok(users);
     }
 
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<User>> Show(int id)
     {
         var login = await _userRepository.Show(id);
-        var loginDto = _mapper.Map<LoginDto>(login);
+        var loginDto = _mapper.Map<UserDto>(login);
         if (login == null) return NotFound(new { message = "User not found" });
         return Ok(loginDto);
     }

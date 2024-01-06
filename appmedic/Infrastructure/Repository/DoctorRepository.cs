@@ -59,10 +59,10 @@ public class DoctorRepository : IDoctor
         using (var connection = new MySqlConnection(_dataContext.Database.GetConnectionString()))
         {
             connection.Open();
-            var query = "SELECT * FROM Doctors WHERE Name LIKE @Name";
+            const string query = "SELECT * FROM Doctors WHERE Name LIKE @Name";
             var search = new { Name = $"%{name}%" };
             var doctors = await connection.QueryAsync<Doctor>(query, search);
-            connection.Close();
+            await connection.CloseAsync();
             return doctors.ToList();
         }
     }
