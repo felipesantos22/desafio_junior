@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using appmedic.Domain.Entities;
 using appmedic.Infrastructure.Repository;
 using appmedic.Services.Validations;
@@ -25,7 +26,7 @@ public class ConsultationController : ControllerBase
     }
     
 
-    [Authorize]
+    [Authorize(Roles = "Manager")]
     [HttpPost]
     public async Task<ActionResult<Consultation>> Create([FromBody] Consultation consultation)
     {
@@ -62,7 +63,7 @@ public class ConsultationController : ControllerBase
     }
 
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<Consultation>> Show(int id)
     {
         var consultation = await _consultationRepository.Show(id);
@@ -71,7 +72,7 @@ public class ConsultationController : ControllerBase
     }
 
 
-    [HttpPut("{id}")]
+    [HttpPut("{id:int}")]
     public async Task<ActionResult<Consultation>> Update(int id, [FromBody] Consultation consultation)
     {
         var findConsultation = await _consultationRepository.Show(id);
@@ -87,12 +88,10 @@ public class ConsultationController : ControllerBase
     {
         var consultation = await _consultationRepository.Show(id);
 
-        if (consultation == null)
-        {
-            return NotFound(new { message = "Consultation not found" });
-        }
+        if (consultation == null) return NotFound(new { message = "Consultation not found" });
         
-        var userRole = User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
+        
+        var userRole = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
         if (userRole != "Admin")
         {
             return NotFound(new { message = "You do not have permission to delete this consultation" });

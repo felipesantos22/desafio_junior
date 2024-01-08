@@ -26,7 +26,8 @@ public class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new DoctorMap());
-
+        modelBuilder.ApplyConfiguration(new UserMap());
+        
         modelBuilder.Entity<Doctor>()
             .HasIndex(d => d.CRM)
             .IsUnique();

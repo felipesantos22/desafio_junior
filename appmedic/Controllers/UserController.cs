@@ -31,6 +31,7 @@ public class UserController : ControllerBase
         {
             return BadRequest(new {message = "UserName already registered." });
         }
+        user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
         var newLogin = await _userRepository.Create(user);
         return Ok(newLogin);
     }

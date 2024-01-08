@@ -106,3 +106,4 @@ C:\Users\Felipe\RiderProjects\desafio_junior\appmedic\obj\Debug\net7.0\appmedic.
 C:\Users\Felipe\RiderProjects\desafio_junior\appmedic\obj\Debug\net7.0\appmedic.genruntimeconfig.cache
 C:\Users\Felipe\RiderProjects\desafio_junior\appmedic\obj\Debug\net7.0\ref\appmedic.dll
 C:\Users\Felipe\RiderProjects\desafio_junior\appmedic\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Felipe\RiderProjects\desafio_junior\appmedic\bin\Debug\net7.0\BCrypt.Net.dll

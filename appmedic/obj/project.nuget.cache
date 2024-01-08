@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AKWkJ5IG/0m7xjxB8O0fqMrD0rBJKw47BJw5BWX/jFVG1EePxMFvO4veTikNMnzmufHnQQHx9SYTqOm7+iTu7w==",
+  "dgSpecHash": "J3oyaId423jIyuO1gtJPk966IOhMn8tEqjPfKTBju0cH/bsvJY2ffepTX3yndmmxC1S1ZuzGbwokVoMTr8rQFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Felipe\\RiderProjects\\desafio_junior\\appmedic\\appmedic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Felipe\\.nuget\\packages\\bcrypt.net\\0.1.0\\bcrypt.net.0.1.0.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.13\\microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512",
@@ -52,5 +53,16 @@
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt.Net 0.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt.Net",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
